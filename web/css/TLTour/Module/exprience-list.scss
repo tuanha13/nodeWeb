@@ -1,0 +1,51 @@
+/* Module - Exprience list - Start */
+.module-exprience-list{
+  .list-item{
+    margin: 0;
+    padding: 0;
+    li{
+      list-style-type: none;
+      border-bottom: 1px dashed;
+      border-color: #b58a4d;
+      padding: 20px 0;
+    }
+    .title{
+      color: $base-color;
+      font-size: $title-size-h4;
+      text-decoration: none;
+      &:hover{
+        color: $title-hover-color;
+      }
+    }
+    .content{
+      display: table;
+      width: 100%;
+      margin-top: 15px;
+      .avatar,
+      .describe{
+        display: table-cell;
+        vertical-align: top;
+      }
+      .avatar{
+        width: 270px;
+        padding-right: 20px;
+        img{}
+      }
+      .describe{
+        color: #b3894d;
+        font-size: $title-size-h5;
+        .viewmore{
+          text-decoration: underline;
+          color: $title-color;
+          &:hover{
+            color: $title-hover-color;
+          }
+        }
+      }
+    }
+  }
+  .text-right{
+    margin-top: 20px;
+  }
+}
+/* Module - Exprience list - End */

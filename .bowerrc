@@ -1,0 +1,6 @@
+{
+  "directory": "web/components/",
+  "registry": "https://bower.herokuapp.com",
+  "proxy": "http://tuanha11%4012345@fsoft-proxy:8080",
+  "https-proxy": "http://tuanha11%4012345@fsoft-proxy:8080"
+}

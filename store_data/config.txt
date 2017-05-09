@@ -1,0 +1,5 @@
+##store data
+dbpath=D:\Temp\GitHub\nodeWeb\store_data\data
+ 
+##all output go here
+logpath=D:\Temp\GitHub\nodeWeb\store_data\log\mongo.log
