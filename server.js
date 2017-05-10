@@ -33,8 +33,6 @@
         next();
     });
 
-    
-    // __.app.use(__.router);
     // catch 404 and forward to error handler
     __.app.use(function (req, res, next) {
         var err = new Error('Page Not Found');

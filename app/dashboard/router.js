@@ -1,7 +1,7 @@
 
 (function () {
     'use strict';
-
+    
     /** get page */
     __.router.get('/', function (req, res, next) {
         
