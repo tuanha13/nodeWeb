@@ -1,0 +1,15 @@
+/* Module - Menu footer - Start */
+.module-menu-footer{
+  .list-inline{
+    margin: 30px 0;
+    li{
+      a{
+        color: $base-color;
+        &:hover{
+          color: $title-hover-color;
+        }
+      }
+    }
+  }
+}
+/* Module - Menu footer - End */

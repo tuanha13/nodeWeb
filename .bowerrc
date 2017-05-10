@@ -1,0 +1,6 @@
+{
+  "directory": "web/lib/",
+  "registry": "https://bower.herokuapp.com",
+  "proxy": "http://public%4012345@10.17.23.10:3128",
+  "https-proxy": "http://public%4012345@10.17.23.10:3128"
+}

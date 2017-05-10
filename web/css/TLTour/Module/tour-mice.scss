@@ -1,0 +1,65 @@
+$border-dashed: #a06f34;
+$sub-title: #ce9957;
+/* Module - Tour M.I.C.E - Start */
+.module-mice-list{
+  .list-item{
+    margin: 0;
+    padding: 0;
+    li {
+      display: table;
+      width: 100%;
+      list-style-type: none;
+      a{}
+      .avatar{
+        display: table-cell;
+        vertical-align: top;
+        width: 460px;
+      }
+      .content{
+        padding-left: 30px;
+        display: table-cell;
+        vertical-align: top;
+        .title{
+          display: block;
+          margin-top: -9px;
+          color: $title-color;
+          font-size: $title-size-h3;
+          text-decoration: none;
+          &:hover{
+            color: $title-hover-color;
+          }
+        }
+        .time-price-destination{
+          border-top: 1px dashed $border-dashed;
+          border-bottom: 1px dashed $border-dashed;
+          color: $sub-title;
+          padding: 10px 0;
+          margin: 15px 0;
+          font-size: $title-size-h6;
+          font-style: italic;
+          span{
+            display: block;
+            margin-top: 5px;
+            font-style: normal;
+            color: $base-color;
+            font-size: $title-size-h5;
+          }
+          .time,.price,.destination{
+            display: inline-block;
+            width: 150px;
+            vertical-align: top;
+          }
+        }
+        .describe{
+          color: $sub-title;
+          font-style: italic;
+          font-size: $title-size-h6;
+        }
+      }
+    }
+    li+li{
+      padding-top: 50px;
+    }
+  }
+}
+/* Module - Tour M.I.C.E - End */
