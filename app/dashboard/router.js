@@ -2,22 +2,16 @@
 (function () {
     'use strict';
 
-    var router = __.express.Router();
-
-    /** get test page */
-    router.get('/', function (req, res, next) {
-        console.log('--->>>');
-        res.write('hello');
+    /** get page */
+    __.router.get('/', function (req, res, next) {
+        
+        res.render('default', {
+            title: 'dashboard'
+        });
         res.end();
     });
 
-    router.get('/testId/:id', function (req, res, next) {
-        console.log('--->>>', req.params['id']);
-        res.write('hello');
-        res.end();
-    });
-
-    module.exports = router;
+    module.exports = __.router;
 })();
 
 

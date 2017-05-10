@@ -23,13 +23,32 @@
         __.app.use(router.path, require(router.middleware));
     });
 
-    
-    __.app.use(function(req, res, next) {
+
+    __.app.use(function (req, res, next) {
         var url = req.url;
 
-        if (url === '/') {
-            res.redirect('/home');
+        if (url === adminPath) {
+            res.redirect(adminPath + '/dashboard');
         }
         next();
+    });
+
+    
+    // __.app.use(__.router);
+    // catch 404 and forward to error handler
+    __.app.use(function (req, res, next) {
+        var err = new Error('Page Not Found');
+        err.status = 404;
+        next(err);
+    });
+    // production error handler
+    __.app.use(function (err, req, res, next) {
+        if (err) {
+            console.log(JSON.stringify(err));
+            res.status(err.status || 500);
+            res.render('404', {
+                title: 'Page not found'
+            });
+        }
     });
 })();

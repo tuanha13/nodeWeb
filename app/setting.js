@@ -22,12 +22,14 @@ __.init = function() {
     __.connected           = false;
     __.helper              = require('./helper.js');
     __.adminPath           = '/admin'; // root admin query string
-    __.layout              = '/common'; // Layout for website
-    __.app.set('views', './web/layout' + __.layout);
+    __.layout              = 'default'; // Layout for admin
+    __.app.set('views', './web/layout/' + __.layout);
     __.app.set('view engine', 'pug');
-    __.app.use('/oss', __.express.static(__.path.join(__dirname, './web/lib')));
-    __.app.use('/scripts', __.express.static(__.path.join(__dirname, './web/js')));
-    __.app.use('/styles', __.express.static(__.path.join(__dirname, './web/css')));
+
+    __.app.use('/photos', __.express.static(__.path.join(__dirname, '../web/image')));
+    __.app.use('/oss', __.express.static(__.path.join(__dirname, '../web/lib')));
+    __.app.use('/scripts', __.express.static(__.path.join(__dirname, '../web/js')));
+    __.app.use('/styles', __.express.static(__.path.join(__dirname, '../web/css')));
 };
 __.init();
 
