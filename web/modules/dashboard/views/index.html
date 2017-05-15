@@ -1,0 +1,54 @@
+﻿<div class="clearfix"></div>
+<article class="boundingBox">
+    <section class="section bottomBorder-true">
+        <h3 class="section_title">Users</h3>
+        <p>Lorem ipsum dolor sit amet, vidit malis et mei. Et verear commune incorrupte vel, tale saperet praesent ei has. </p>
+    </section>
+
+    <section class="section topBorder-true">
+        <div class="form-inline">
+            <div class="form-group pull-right">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                </div>
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="tablebox marginTop5">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th class="sorting" width="5%"><a href="#" class="sort-item">ID</a></th>
+                        <th class="sorting" width="20%"><a href="#" class="sort-item">Username</a></th>
+                        <th></th>
+                        <th style="width:15px;" class="text-center"><a ng-click="$ctrl.add()"><i class="fa fa-plus" aria-hidden="true"></i></a></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="row in $ctrl.model.users">
+                        <td>{{row.id}}</td>
+                        <td>{{row.username}}</td>
+                        <td></td>
+                        <td>
+                            <div class="dropdown properties">
+                                <a id="dropdown-menu-{{ row.id }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><i class="fa fa-gear" aria-hidden="true"></i></a>
+                                <ul class="dropdown-menu" aria-labelledby="dropdown-menu-{{ row.id }}">
+                                    <li><a ng-click="$ctrl.edit(user.id);">Edit Properties</a></li>
+                                    <li><a ng-click="$ctrl.delete(user.id);">Delete</a></li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr ng-if="$ctrl.model.users.length == 0 || !$ctrl.model.users"><td colspan="4">No records found</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="clearfix"></div>
+
+        <pagination total-items="230"></pagination>
+
+        <div class="clearfix"></div>
+    </section>
+</article>

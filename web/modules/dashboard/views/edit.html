@@ -1,0 +1,26 @@
+﻿<div class="modal-header">
+    <button data-ng-click="options.cancel()" class="close" type="button">×</button>
+    <h4>Edit User</h4>
+</div>
+<div class="modal-body">
+    <div class="box_detailed">
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label class="col-sm-4 control-label">Username</label>
+                <div class="col-sm-7">
+                    <input type="email" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">Password</label>
+                <div class="col-sm-7">
+                    <input type="password" class="form-control">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-primary" data-ng-click="options.update()">Update</button>
+    <button class="btn btn-default" data-ng-click="options.cancel()">Cancel</button>
+</div>
