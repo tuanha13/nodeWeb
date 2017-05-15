@@ -10,7 +10,7 @@
         directive.scope = {
             totalItems: '='
         };
-        directive.templateUrl = view('partials/pagination.html');
+        directive.templateUrl = view('components/pagination.html');
         directive.controller = function ($scope) {
             $scope.currentPage = 1;
             $scope.itemsPerPage = 10;

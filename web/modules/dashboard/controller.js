@@ -3,8 +3,8 @@
 
     angular.module('app.controllers').controller('DashboardController', DashboardController);
 
-    DashboardController.$inject = ['AppServices', 'AppModels', 'config'];
-    function DashboardController(AppServices, AppModels, config) {
+    DashboardController.$inject = ['AppServices', 'config'];
+    function DashboardController(AppServices, config) {
         var that = this;
 
         that.model = {
@@ -13,15 +13,11 @@
         that.currentPage = 1;
         that.itemsPerPage = config.itemsPerPage;
 
-        AppModels.user().getAll().then(function (data) {
-            that.model.users = data;
-            that.totalItems = 100;
-        });
 
         // open dialog to add new user
         that.add = function () {
             var options = {};
-            options.templateUrl = view('user/add.html');
+            options.templateUrl = view('dashboard/views/add.html');
             options.controller = function ($scope, $uibModalInstance) {
                 $scope.options = {};
 
@@ -41,7 +37,7 @@
 
         that.edit = function () {
             var options = {};
-            options.templateUrl = view('user/edit.html');
+            options.templateUrl = view('dashboard/views/edit.html');
             options.controller = function ($scope, $uibModalInstance) {
                 $scope.options = {};
 
@@ -69,10 +65,5 @@
                 console.log(result);
             });
         };
-
-        //AppModels.user().getAll().then(function (data) {
-        //    that.model.users = data.Users;
-        //    that.totalItems = data.TotalUsers;
-        //});
     }
 })(window.angular);

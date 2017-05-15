@@ -1,0 +1,15 @@
+﻿<div class="modal-content pageloader">
+    <div class="modal-header pageloader_header">
+        <button type="button" class="close" data-dissmiss="modal">&times;</button>
+        <h4 class="modal-title pageloader_title">{{options.headerText}}</h4>
+    </div>
+    <div class="modal-body">
+        <div>
+            {{options.bodyText}}
+        </div>
+    </div>
+    <div class="modal-footer pageloader_footer">
+        <button class="btn" ng-click="options.yes();">{{options.actionButtonText}}</button>
+        <button type="button" class="btn" ng-click="options.no()">{{options.closeButtonText}}</button>
+    </div>
+</div>

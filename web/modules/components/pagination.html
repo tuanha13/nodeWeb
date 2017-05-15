@@ -1,0 +1,48 @@
+﻿<div class="paginationDiv">
+    <div class="form-inline">
+        <div class="form-group pull-right">
+            <div class="pageNavigation size-full horizontalLayout-trailing">
+                <ul>
+                    <li>
+                        <div class="pageNavigation-cell">
+                            <span class="page-number state-selected">1 - {{ numPages }}</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="pageNavigation-cell">
+                            <a tabindex="-1" class="arrow first-page" ng-class="{'ui-state-disabled': currentPage == 1}" ng-click="first()"></a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="pageNavigation-cell">
+                            <a tabindex="-1" class="arrow previous-page" ng-class="{'ui-state-disabled': currentPage == 1}" ng-click="prev()"></a>
+                        </div>
+                    </li>
+                    <li ng-repeat="p in pages">
+                        <div class="page-numbers pageNavigation-cell">
+                            <a class="page-number" ng-class="{'state-selected': currentPage == p}" ng-click="page(p)">{{ p }}</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="pageNavigation-cell">
+                            <a class="arrow next-page" ng-class="{'ui-state-disabled': currentPage == numPages }" ng-click="next()"></a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="pageNavigation-cell last">
+                            <a class="arrow last-page" ng-class="{'ui-state-disabled': currentPage == numPages }" ng-click="last()"></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="form-group pull-right">
+            <select name="blepageSize" class="selectpicker" bootstrap-select ng-model="itemsPerPage">
+                <option value="10">10 items</option>
+                <option value="20">20 items</option>
+                <option value="30">30 items</option>
+                <option value="40">40 items</option>
+            </select>
+        </div>
+    </div>
+</div>
