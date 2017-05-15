@@ -5,7 +5,7 @@ html
     include head/meta.pug
     link(href="/photos/favicon.ico" rel="shortcut icon")
     include head/style.pug
-  body
+  body(ng-app="app")
     include body/frame.pug
     include body/script.pug
     block script

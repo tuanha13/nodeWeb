@@ -47,7 +47,7 @@
         });
     });
 
-    angular.module('app.controllers', ['ngRoute']);
+    angular.module('app.controllers', ['ngRoute', 'ui.bootstrap']);
 
     angular.module('app.models', []);
 
@@ -55,5 +55,5 @@
 
     angular.module('app.filters', []);
 
-    angular.module('app.services', []);
+    angular.module('app.services', ['ui.bootstrap']);
 })(window.angular, window);
