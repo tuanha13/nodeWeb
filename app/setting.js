@@ -12,7 +12,7 @@ __.init = function() {
     __.express             = require('express'); // Package Express
     __.app                 = __.express();
     __.router              = __.express.Router();
-    __.pug                = require('pug'); // Package template pug
+    __.pug                 = require('pug'); // Package template pug
     __.bodyParser          = require('body-parser'); // Package
     __.mongoose            = require('mongoose'); // Package
     // __.socket              = require('socket.io');
@@ -26,6 +26,7 @@ __.init = function() {
     __.app.set('views', './web/layout/' + __.layout);
     __.app.set('view engine', 'pug');
 
+    __.app.use('/templates', __.express.static(__.path.join(__dirname, '../web/modules')));
     __.app.use('/photos', __.express.static(__.path.join(__dirname, '../web/image')));
     __.app.use('/oss', __.express.static(__.path.join(__dirname, '../web/lib')));
     __.app.use('/scripts', __.express.static(__.path.join(__dirname, '../web/js')));

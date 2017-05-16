@@ -27,8 +27,8 @@
     __.app.use(function (req, res, next) {
         var url = req.url;
 
-        if (url === adminPath) {
-            res.redirect(adminPath + '/dashboard');
+        if (url === adminPath || url === adminPath + '/') {
+            res.render('default', {title: 'Admin Page'});
         }
         next();
     });
