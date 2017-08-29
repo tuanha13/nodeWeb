@@ -8,7 +8,7 @@
         return require(__dirname + '/' + name);
     };
     global._ = require('underscore');
-    global.__ = rootRequire('app/setting');
+    global.__ = rootRequire('server/setting');
     global.adminPath = __.adminPath;
 
     __.app.listen(__.http.port, function () {
@@ -18,17 +18,17 @@
     /**
      * listen router admin site
      */
-    var routersAdmin = __.helper.getRouters();
-    _.each(routersAdmin, function (router) {
-        __.app.use(router.path, require(router.middleware));
-    });
+    // var routersAdmin = __.helper.getRouters();
+    // _.each(routersAdmin, function (router) {
+    //     __.app.use(router.path, require(router.middleware));
+    // });
 
 
     __.app.use(function (req, res, next) {
         var url = req.url;
 
         if (url === adminPath || url === adminPath + '/') {
-            res.render('default', {title: 'Admin Page'});
+            res.render('index', {title: 'Admin Page'});
         }
         next();
     });

@@ -1,0 +1,10 @@
+header.header
+  .col-xs-6.col-sm-6
+    span.app-branding(title='Home') {{ siteName }}
+    nav.utilityLinksNav
+      ul.utilityLinks
+        li
+          strong
+            span#name {{userName}}
+          a(href='/Signout', title='Logout') Logout
+  .col-xs-6.col-sm-6
