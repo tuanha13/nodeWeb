@@ -8,7 +8,7 @@
         return require(__dirname + '/' + name);
     };
     global._ = require('underscore');
-    global.__ = rootRequire('app/setting');
+    global.__ = rootRequire('server/setting');
     global.adminPath = __.adminPath;
 
     __.app.listen(__.http.port, function () {
@@ -18,23 +18,29 @@
     /**
      * listen router admin site
      */
-    var routersAdmin = __.helper.getRouters();
-    _.each(routersAdmin, function (router) {
-        __.app.use(router.path, require(router.middleware));
-    });
+    // var routersAdmin = __.helper.getRouters();
+    // _.each(routersAdmin, function (router) {
+    //     __.app.use(router.path, require(router.middleware));
+    // });
 
 
     __.app.use(function (req, res, next) {
         var url = req.url;
 
-        if (url === adminPath) {
-            res.redirect(adminPath + '/dashboard');
+        if (url === adminPath || url === adminPath + '/') {
+            res.render('index', {title: 'Admin Page'});
         }
         next();
     });
 
-    
-    // __.app.use(__.router);
+     __.app.use('/templates/:moduleName/views/:tempName', function (req, res, next) {
+        var tempName = req.params.tempName;
+        console.log('haahahaaahha', tempName);
+        res.render(tempName, {title: req.params.moduleName});
+        res.end();
+        next();
+    });
+
     // catch 404 and forward to error handler
     __.app.use(function (req, res, next) {
         var err = new Error('Page Not Found');

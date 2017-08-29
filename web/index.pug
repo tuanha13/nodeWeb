@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    title #{title}
+    base(href="")
+    meta()
+    link(href="/photos/favicon.ico" rel="shortcut icon")
+  body
+    web-app| loading...
+
+    script(src='./lib/core-js/client/shim.min.js')
+    script(src='./lib/zone.js/dist/zone.js')
+    script(src='./lib/systemjs/dist/system.src.js')
+    script(src='./scripts/systemjs.config.js')
+
+    script.
+        System.import('./app/app.main.js')
+        .then(function(m){
+            var appsettings = {
+                
+            };
+            m.RunApplication(appsettings);
+        }).catch(function(err){
+            console.error(err);
+        });
